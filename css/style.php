@@ -502,6 +502,257 @@
 .section { padding: 80px 0; }
 .section-sm { padding: 40px 0; }
 
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+/* --- Smooth scroll --- */
+html { scroll-behavior: smooth; }
+
+/* --- Keyframes --- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes treeGrow {
+  from { opacity: 0; transform: scaleY(0); }
+  to { opacity: 1; transform: scaleY(1); }
+}
+@keyframes particleFloat {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-200px) rotate(720deg); opacity: 0; }
+}
+@keyframes ripple {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* --- Entrance classes (applied by JS on scroll) --- */
+.animate { opacity: 0; }
+.animate-up { opacity: 0; }
+.animate-down { opacity: 0; }
+.animate-left { opacity: 0; }
+.animate-right { opacity: 0; }
+.animate-scale { opacity: 0; }
+
+.animate.visible { animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-up.visible { animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-down.visible { animation: fadeInDown 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-left.visible { animation: fadeInLeft 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-right.visible { animation: fadeInRight 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-scale.visible { animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+
+/* Stagger children */
+.stagger > * { opacity: 0; }
+.stagger.visible > *:nth-child(1) { animation: fadeInUp 0.5s 0.05s forwards; }
+.stagger.visible > *:nth-child(2) { animation: fadeInUp 0.5s 0.12s forwards; }
+.stagger.visible > *:nth-child(3) { animation: fadeInUp 0.5s 0.19s forwards; }
+.stagger.visible > *:nth-child(4) { animation: fadeInUp 0.5s 0.26s forwards; }
+.stagger.visible > *:nth-child(5) { animation: fadeInUp 0.5s 0.33s forwards; }
+.stagger.visible > *:nth-child(6) { animation: fadeInUp 0.5s 0.40s forwards; }
+.stagger.visible > *:nth-child(7) { animation: fadeInUp 0.5s 0.47s forwards; }
+.stagger.visible > *:nth-child(8) { animation: fadeInUp 0.5s 0.54s forwards; }
+
+/* --- Hero animations --- */
+.hero h1 { animation: fadeInUp 0.8s ease-out; }
+.hero p { animation: fadeInUp 0.8s 0.15s ease-out both; }
+.hero .btn-group { animation: fadeInUp 0.8s 0.3s ease-out both; }
+.hero-form { animation: fadeInRight 0.8s 0.2s ease-out both; }
+
+/* Hero floating orbs */
+.hero::before { animation: float 6s ease-in-out infinite; }
+.hero::after { animation: float 8s ease-in-out infinite reverse; }
+
+/* --- Hover animations --- */
+.btn:hover { animation: pulse 0.6s ease-in-out; }
+.btn-primary:not(:hover) { animation: none; }
+
+.service-card {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+.service-card .icon { transition: transform 0.4s ease; }
+.service-card:hover .icon { transform: scale(1.15) rotate(-5deg); }
+
+.feature-card {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+.feature-card:hover { transform: translateY(-6px) scale(1.01); }
+.feature-card .icon { transition: transform 0.4s ease; }
+.feature-card:hover .icon { transform: scale(1.1) rotate(5deg); }
+
+.gallery-grid img { transition: transform 0.5s ease, box-shadow 0.5s ease; }
+.gallery-grid img:hover { transform: scale(1.04); box-shadow: var(--shadow-lg); z-index: 2; position: relative; }
+
+.quick-action { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.quick-action:hover { transform: translateY(-4px) scale(1.03); }
+
+.action-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.action-btn:hover { transform: translateY(-2px) scale(1.05); }
+
+.navbar nav a { position: relative; }
+.navbar nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+.navbar nav a:hover::after,
+.navbar nav a.active::after { width: 60%; }
+
+/* --- Table row animation --- */
+.table-container tbody tr {
+  animation: fadeInUp 0.4s ease-out both;
+}
+.table-container tbody tr:nth-child(1) { animation-delay: 0.02s; }
+.table-container tbody tr:nth-child(2) { animation-delay: 0.06s; }
+.table-container tbody tr:nth-child(3) { animation-delay: 0.10s; }
+.table-container tbody tr:nth-child(4) { animation-delay: 0.14s; }
+.table-container tbody tr:nth-child(5) { animation-delay: 0.18s; }
+.table-container tbody tr:nth-child(6) { animation-delay: 0.22s; }
+.table-container tbody tr:nth-child(7) { animation-delay: 0.26s; }
+.table-container tbody tr:nth-child(8) { animation-delay: 0.30s; }
+.table-container tbody tr:nth-child(9) { animation-delay: 0.34s; }
+.table-container tbody tr:nth-child(10) { animation-delay: 0.38s; }
+.table-container tbody tr:hover { animation: none; }
+
+/* --- Tree animations --- */
+.tree-person {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.tree-person:hover {
+  transform: translateY(-5px) scale(1.05);
+  border-color: var(--primary);
+  box-shadow: 0 12px 40px rgba(108, 99, 255, 0.25);
+}
+.tree li {
+  animation: fadeInUp 0.5s ease-out both;
+}
+.tree li:nth-child(1) { animation-delay: 0.1s; }
+.tree li:nth-child(2) { animation-delay: 0.2s; }
+.tree li:nth-child(3) { animation-delay: 0.3s; }
+.tree li:nth-child(4) { animation-delay: 0.4s; }
+.tree li:nth-child(5) { animation-delay: 0.5s; }
+
+/* Tree lines animation */
+.tree li::before {
+  transition: height 0.6s ease;
+  height: 30px;
+}
+.tree li:hover::before { height: 40px; }
+
+/* --- Page transition --- */
+body {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* --- CTA gradient animation --- */
+.cta { background-size: 200% 200%; animation: gradientShift 8s ease infinite; }
+
+/* --- Loading spinner --- */
+.spinner {
+  width: 40px; height: 40px;
+  border: 4px solid var(--gray-200);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 20px auto;
+}
+
+/* --- Skeleton loading --- */
+.skeleton {
+  background: linear-gradient(90deg, var(--gray-200) 25%, var(--gray-100) 50%, var(--gray-200) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Ripple button effect --- */
+.btn-ripple { position: relative; overflow: hidden; }
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 20px; height: 20px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+.btn-ripple:active::after { animation: ripple 0.6s ease-out; }
+
+/* --- Notification toast --- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--dark);
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  animation: fadeInUp 0.4s ease-out;
+  z-index: 9999;
+}
+.toast.leaving { animation: fadeInUp 0.4s ease-out reverse forwards; }
+
+/* --- Counter animation --- */
+.counter { display: inline-block; transition: all 0.3s ease; }
+
+/* --- Tree-specific: grow lines on load --- */
+.tree ul { animation: fadeInUp 0.8s ease-out; }
+
 @media (max-width: 768px) {
   .hero { min-height: auto; padding: 60px 0; }
   .hero h1 { font-size: 32px; }

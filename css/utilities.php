@@ -146,3 +146,4 @@ input, select, textarea {
   .text-3xl { font-size: 28px; }
 }
 </style>
+<script src="../js/animations.js"></script>

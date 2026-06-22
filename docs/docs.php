@@ -32,7 +32,7 @@ $participants = $pdoStat->fetchAll();
         </div>
     </div>
 
-    <div class="page-header">
+    <div class="page-header animate-up">
         <div class="container">
             <h1>Membres de la famille</h1>
             <p><?= count($participants) ?> membre(s) enregistre(s)</p>
@@ -41,7 +41,7 @@ $participants = $pdoStat->fetchAll();
 
     <section class="section-sm">
         <div class="container">
-            <div class="card2" style="padding:32px;">
+            <div class="card2 animate-up" style="padding:32px;">
                 <div class="search-bar">
                     <form action="recherche.php" method="post" style="display:flex; gap:12px; flex:1; flex-wrap:wrap;">
                         <input type="search" name="recherche" placeholder="Rechercher un membre...">

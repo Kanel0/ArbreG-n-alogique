@@ -67,9 +67,9 @@
     <!-- Services -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Gérez votre famille</h2>
-            <p class="section-subtitle">Tous les outils pour construire et organiser votre arbre généalogique</p>
-            <div class="services-grid">
+            <h2 class="section-title animate-up">Gérez votre famille</h2>
+            <p class="section-subtitle animate-up">Tous les outils pour construire et organiser votre arbre généalogique</p>
+            <div class="services-grid stagger">
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-male"></i></div>
                     <h3>Père</h3>
@@ -105,7 +105,7 @@
     </section>
 
     <!-- Gallery -->
-    <section class="section-sm">
+    <section class="section-sm animate-up">
         <div class="container">
             <div class="gallery-grid">
                 <img src="../images/famille.webp" alt="Famille">

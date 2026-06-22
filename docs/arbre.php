@@ -81,7 +81,7 @@ function renderTree($person, $childrenByParent) {
         </div>
     </div>
 
-    <div class="page-header">
+    <div class="page-header animate-up">
         <div class="container">
             <h1>Arbre genealogique</h1>
             <p>Visualisation des liens familiaux</p>
@@ -90,7 +90,7 @@ function renderTree($person, $childrenByParent) {
 
     <section class="section-sm">
         <div class="container">
-            <div class="card2" style="padding:32px;">
+            <div class="card2 animate-up" style="padding:32px;">
                 <?php if (empty($allMembers)): ?>
                     <div style="text-align:center; padding:60px 20px; color:var(--gray-500);">
                         <i class="fas fa-tree" style="font-size:48px; margin-bottom:16px; display:block; color:var(--gray-300);"></i>
