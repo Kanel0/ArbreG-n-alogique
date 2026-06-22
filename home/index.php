@@ -4,131 +4,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossorigin="anonymous" />
     <?php include("../css/utilities.php"); ?>
     <?php include("../css/style.php"); ?>
-    <title>Arbre généalogique</title>
+    <title>ArbreG. - Arbre Généalogique</title>
 </head>
 <body>
+
     <!-- Navbar -->
     <div class="navbar">
-        <div class="container flex">
+        <div class="container">
             <h1 class="logo">ArbreG.</h1>
             <nav>
                 <ul>
-                    <li><a href="index.php">Acceuil</a></li>
+                    <li><a href="index.php" class="active">Accueil</a></li>
                     <li><a href="../person/registre.php">Registre</a></li>
-                    <li><a href="../docs/docs.php">Membre</a></li>
+                    <li><a href="../docs/docs.php">Membres</a></li>
                     <li><a href="../docs/arbre.php">Arbre</a></li>
-                    <li><a href="../login/index.php">Se deconnecter</a></li>
-
                 </ul>
             </nav>
         </div>
     </div>
-    
-    
-    <!-- Showcase -->
-    <section class="showcase">
-        <div class="container grid">
-            <div class="showcase-text">
-                <h1>Famille Unie</h1>
-                <p>Ce site vous aide à trouver votre racine et de faire animée la racine de votre famille </p>
-                <a href="../features/features.php" class="btn btn-outline">Savoir Plus</a>
-            </div>
-            
-            </div>
-        </div>
-    </section>
 
-    <section class="stats">
+    <!-- Hero -->
+    <section class="hero">
         <div class="container">
-            <h3 class="stats-heading text-center my-1">
-                Bienvenue sur notre page web. Commencez par enregistrer toutes les générations de votre famille
-            </h3>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <div class="card2">
-            <h1>Membre de la Famille</h1>
-            <div class="services__wrapper">
-                <div class="services__card">
-                    <h2>Père</h2>
-                    <p>Ajouter l'information sur le Père de la Famille</p>
-                    <div class="services__btn"><a href="../docs/docs.php"><button>Voir</button></a></div>
+            <div class="grid grid-2" style="align-items:center;">
+                <div>
+                    <h1>Découvrez <br>vos racines</h1>
+                    <p>Créez et visualisez l'arbre généalogique de votre famille. Retrouvez l'histoire de vos proches en quelques clics.</p>
+                    <div class="btn-group">
+                        <a href="../person/registre.php" class="btn btn-outline">+ Ajouter un membre</a>
+                        <a href="../docs/arbre.php" class="btn btn-outline">Voir l'arbre</a>
+                    </div>
                 </div>
-                <div class="services__card">
-                    <h2>Mère</h2>
-                    <p>Ajouter l'information sur la Mère de la famille</p>
-                    <div class="services__btn"><a href="../docs/docs.php"><button>Voir</button></a></div>
-                </div>
-                <div class="services__card">
-                    <h2>Génération Suivante</h2>
-                    <p>Ajouter l'information sur les enfants que le Père et la Mère ont engendré</p>
-                    <div class="services__btn"><a href="../docs/docs.php"><button>Voir</button></a></div>
-                </div>
-                <div class="services__card">
-                    <h2>Mariage ou Couple</h2>
-                    <p>Marie ou la Femme de la Génération suivante</p>
-                    <div class="services__btn"><a href="../docs/docs.php"><button>Voir</button></a></div>
-                </div>
-                <div class="services__card">
-                    <h2>Arbre Généalogique</h2>
-                    <p>Visualisez l'arbre complet de votre famille</p>
-                    <div class="services__btn"><a href="../docs/arbre.php"><button>Voir l'arbre</button></a></div>
+                <div class="hero-form">
+                    <h2>Bienvenue</h2>
+                    <p>Commencez par ajouter un membre à votre arbre</p>
+                    <form method="post" action="../person/registre.php">
+                        <div class="form-group">
+                            <label>Nom complet</label>
+                            <input type="text" placeholder="Entrez un nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Date de naissance</label>
+                            <input type="date" name="date_de_naissance" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Genre</label>
+                            <select name="genre">
+                                <option>Homme</option>
+                                <option>Femme</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="save">Enregistrer <i class="fas fa-arrow-right"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cli -->
-    <section class="cli">
-        <div class="container grid">
-            <img src="../images/famille.webp" alt="">
-            <div class="card">
-                <img src="../images/Happiness-family.jpg" alt="">
-            </div>
-            <div class="card">
-                <img src="../images/fam.jpg" alt="">
+    <!-- Services -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Gérez votre famille</h2>
+            <p class="section-subtitle">Tous les outils pour construire et organiser votre arbre généalogique</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-male"></i></div>
+                    <h3>Père</h3>
+                    <p>Ajoutez les informations sur le père de la famille</p>
+                    <a href="../docs/docs.php" class="btn btn-primary btn-sm">Voir</a>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-female"></i></div>
+                    <h3>Mère</h3>
+                    <p>Ajoutez les informations sur la mère de la famille</p>
+                    <a href="../docs/docs.php" class="btn btn-secondary btn-sm">Voir</a>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-child"></i></div>
+                    <h3>Enfants</h3>
+                    <p>Enregistrez les enfants et la génération suivante</p>
+                    <a href="../docs/enfant.php" class="btn btn-secondary btn-sm">Voir</a>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-heart"></i></div>
+                    <h3>Mariages</h3>
+                    <p>Enregistrez les unions et les couples</p>
+                    <a href="../docs/mariage.php" class="btn btn-secondary btn-sm">Voir</a>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-tree"></i></div>
+                    <h3>Arbre complet</h3>
+                    <p>Visualisez l'arbre généalogique complet de votre famille</p>
+                    <a href="../docs/arbre.php" class="btn btn-primary btn-sm">Explorer</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Cloud -->
-    <section class="cloud bg-primary my-2 py-2">
-        <div class="container grid">
-            <div class="text-center">
-                <h2 class="lg">ArbreG. comme Arbre Généalogique </h2>
-                <p class="lead my-1">Savez-vous que des gens pourrait avoir des orgines différentes mais de la même famille?</p>
-                <a href="../features/features.php" class="btn btn-dark">Savoir Plus</a>
+    <!-- Gallery -->
+    <section class="section-sm">
+        <div class="container">
+            <div class="gallery-grid">
+                <img src="../images/famille.webp" alt="Famille">
+                <img src="../images/Happiness-family.jpg" alt="Famille heureuse">
+                <img src="../images/fam.jpg" alt="Famille">
+                <img src="../images/logos/Granp.webp" alt="Grand-parent">
+                <img src="../images/logos/Gmere.jpeg" alt="Grand-mère">
             </div>
-            <img src="../images/logos/Arbre.jpg" alt="">
         </div>
     </section>
-      <!-- Footer -->
-    <footer class="footer bg-dark py-5">
-        <div class="container grid grid-3">
-            <div>
-                <h1>ArbreG.
-                </h1>
-                <p>Copyright &copy; 2022</p>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Prêt à construire votre arbre ?</h2>
+            <p>Rejoignez ArbreG. et commencez à explorer l'histoire de votre famille dès aujourd'hui.</p>
+            <a href="../person/registre.php" class="btn btn-outline btn-lg">Commencer maintenant <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-3" style="align-items:start;">
+                <div>
+                    <h3>ArbreG.</h3>
+                    <p>Application de gestion d'arbre généalogique. Retrouvez et organisez l'histoire de votre famille.</p>
+                </div>
+                <nav>
+                    <p style="font-weight:600; margin-bottom:12px; color:#fff;">Navigation</p>
+                    <ul>
+                        <li><a href="index.php">Accueil</a></li>
+                        <li><a href="../person/registre.php">Registre</a></li>
+                        <li><a href="../docs/docs.php">Membres</a></li>
+                        <li><a href="../docs/arbre.php">Arbre</a></li>
+                    </ul>
+                </nav>
+                <div class="social">
+                    <p style="font-weight:600; margin-bottom:12px; color:#fff;">Suivez-nous</p>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="../home/index.php">Acceuil</a></li>
-                    <li><a href="../person/registre.php">Registre</a></li>
-                    <li><a href="../docs/docs.php">Membre</a></li>
-                </ul>
-            </nav>
-            <div class="social">
-                
-                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:32px; padding-top:24px; text-align:center;">
+                <p>&copy; 2024 ArbreG. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
-    
+
 </body>
 </html>

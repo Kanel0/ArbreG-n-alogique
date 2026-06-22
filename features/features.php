@@ -3,122 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossorigin="anonymous" />
     <?php include("../css/utilities.php"); ?>
     <?php include("../css/style.php"); ?>
-    <title>Arbre généalogique </title>
+    <title>Fonctionnalites - ArbreG.</title>
 </head>
 <body>
-    <!-- Navbar -->
+
     <div class="navbar">
-        <div class="container flex">
+        <div class="container">
             <h1 class="logo">ArbreG.</h1>
             <nav>
                 <ul>
-                    <li><a href="../home/index.php">Acceuil</a></li>
+                    <li><a href="../home/index.php">Accueil</a></li>
                     <li><a href="../person/registre.php">Registre</a></li>
-                    <li><a href="../docs/docs.php">Membre</a></li>
+                    <li><a href="../docs/docs.php">Membres</a></li>
                     <li><a href="../docs/arbre.php">Arbre</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 
-    <!-- Head -->
-    <section class="features-head bg-primary py-3">
-        <div class="container grid">
-            <div>
-                <h1 class="xl">Features</h1>
-                <p class="lead">
-                    Check out the features of Loruki that separate us from the
-						competition
-                </p>
-            </div>
-            <img src="images/server.png" alt="">
+    <section class="hero" style="min-height:300px;">
+        <div class="container text-center">
+            <h1 style="font-size:40px;">Fonctionnalites</h1>
+            <p style="margin: 16px auto 0; max-width:600px;">Decouvrez tout ce que vous pouvez faire avec ArbreG. pour construire votre arbre genealogique.</p>
         </div>
     </section>
 
-    <!-- Sub head -->
-    <section class="features-sub-head bg-light py-3">
-        <div class="container grid">
-            <div>
-                <h1 class="md">The Loruki Platform</h1>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor cupiditate dignissimos temporibus perspiciatis quae! Suscipit qui, consectetur ea consequatur, doloribus repellendus quasi, aut corporis nam alias culpa. Nostrum, inventore accusantium!
-                </p>
-            </div>
-            <img src="images/server2.png" alt="">
-        </div>
-    </section>
-
-    <section class="features-main my-2">
-        <div class="container grid grid-3">
-            <div class="card flex">
-                <i class="fas fa-server fa-3x"></i>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nemo saepe corrupti et dolorem voluptate at, nostrum rem voluptatem ab alias quia molestiae ea, libero nihil deserunt. Molestias, eum? Necessitatibus!</p>
-            </div>
-            <div class="card flex">
-                <i class="fas fa-network-wired fa-3x"></i>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                    recusandae perferendis culpa, reiciendis a itaque debitis qui vel
-                    dignissimos ipsum!
-                </p>
-            </div>
-            <div class="card flex">
-                <i class="fas fa-laptop-code fa-3x"></i>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis,
-                    magnam.
-                </p>
-            </div>
-            <div class="card flex">
-                <i class="fas fa-database fa-3x"></i>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, a!
-                </p>
-            </div>
-            <div class="card flex">
-                <i class="fas fa-power-off fa-3x"></i>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis,
-                    magnam.
-                </p>
-            </div>
-            <div class="card flex">
-                <i class="fas fa-upload fa-3x"></i>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis,
-                    magnam.
-                </p>
+    <section class="section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon" style="background:var(--gradient-1);"><i class="fas fa-user-plus"></i></div>
+                    <div>
+                        <h3>Ajout de membres</h3>
+                        <p>Enregistrez les membres de votre famille avec nom, date de naissance et genre.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon" style="background:var(--gradient-3);"><i class="fas fa-people-arrows"></i></div>
+                    <div>
+                        <h3>Relations parent-enfant</h3>
+                        <p>Associez chaque enfant a ses parents pour construire l'arbre automatiquement.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon" style="background:var(--gradient-4);"><i class="fas fa-heart"></i></div>
+                    <div>
+                        <h3>Mariages</h3>
+                        <p>Enregistrez les unions entre les membres avec la date de mariage.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon" style="background:var(--gradient-5);"><i class="fas fa-cross"></i></div>
+                    <div>
+                        <h3>Deces</h3>
+                        <p>Ajoutez les dates de deces pour un suivi complet.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon" style="background:var(--gradient-2);"><i class="fas fa-search"></i></div>
+                    <div>
+                        <h3>Recherche</h3>
+                        <p>Trouvez rapidement un membre grace a la barre de recherche.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon" style="background:var(--gradient-1);"><i class="fas fa-tree"></i></div>
+                    <div>
+                        <h3>Arbre visuel</h3>
+                        <p>Visualisez l'arbre genealogique complet avec une interface interactive.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-        <footer class="footer bg-dark py-5">
-            <div class="footfeatures">
-        <div class="container grid grid-3">
-            <div>
-                <h1>ArbreG.
-                </h1>
-                <p>Copyright &copy; 2022</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="../home/index.php">Acceuil</a></li>
-                    <li><a href="../person/registre.php">Registre</a></li>
-                    <li><a href="../docs/docs.php">Membre</a></li>
-                </ul>
-            </nav>
-            <div class="social">
-                
-                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-            </div>
+    <section class="cta">
+        <div class="container">
+            <h2>Pret a essayer ?</h2>
+            <p>Rejoignez ArbreG. et commencez a explorer l'histoire de votre famille.</p>
+            <a href="../person/registre.php" class="btn btn-outline">Commencer maintenant <i class="fas fa-arrow-right"></i></a>
         </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-3" style="align-items:start;">
+                <div>
+                    <h3>ArbreG.</h3>
+                    <p>Application de gestion d'arbre genealogique.</p>
+                </div>
+                <nav>
+                    <p style="font-weight:600; margin-bottom:12px; color:#fff;">Navigation</p>
+                    <ul>
+                        <li><a href="../home/index.php">Accueil</a></li>
+                        <li><a href="../person/registre.php">Registre</a></li>
+                        <li><a href="../docs/docs.php">Membres</a></li>
+                        <li><a href="../docs/arbre.php">Arbre</a></li>
+                    </ul>
+                </nav>
+                <div class="social">
+                    <p style="font-weight:600; margin-bottom:12px; color:#fff;">Suivez-nous</p>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:32px; padding-top:24px; text-align:center;">
+                <p>&copy; 2024 ArbreG.</p>
+            </div>
         </div>
     </footer>
+
 </body>
 </html>

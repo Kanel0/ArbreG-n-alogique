@@ -28,20 +28,19 @@ foreach ($allMembers as $m) {
 }
 
 function renderTree($person, $childrenByParent) {
-    $hasPartner = !empty($person['partenaire']);
     ?>
     <li>
         <div class="tree-node">
-            <div class="person-card">
-                <div class="person-name"><?= htmlspecialchars($person['nom']) ?></div>
+            <div class="tree-person">
+                <div class="name"><?= htmlspecialchars($person['nom']) ?></div>
                 <?php if (!empty($person['date_de_naissance'])): ?>
-                    <div class="person-detail">Né(e): <?= htmlspecialchars($person['date_de_naissance']) ?></div>
+                    <div class="detail">Ne(e): <?= htmlspecialchars($person['date_de_naissance']) ?></div>
                 <?php endif; ?>
                 <?php if (!empty($person['dece'])): ?>
-                    <div class="person-detail dece">Décédé(e): <?= htmlspecialchars($person['dece']) ?></div>
+                    <div class="detail death">Decede(e): <?= htmlspecialchars($person['dece']) ?></div>
                 <?php endif; ?>
-                <?php if ($hasPartner): ?>
-                    <div class="person-partner">&#9829; <?= htmlspecialchars($person['partenaire']) ?></div>
+                <?php if (!empty($person['partenaire'])): ?>
+                    <div class="partner">&#9829; <?= htmlspecialchars($person['partenaire']) ?></div>
                 <?php endif; ?>
             </div>
             <?php if (isset($childrenByParent[$person['id_individu']])): ?>
@@ -64,191 +63,93 @@ function renderTree($person, $childrenByParent) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossorigin="anonymous" />
     <?php include("../css/utilities.php"); ?>
     <?php include("../css/style.php"); ?>
-    <title>Arbre généalogique</title>
-    <style>
-        .tree-container {
-            padding: 40px 20px;
-            overflow-x: auto;
-        }
-        .tree {
-            display: flex;
-            justify-content: center;
-        }
-        .tree ul {
-            padding-top: 30px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin: 0;
-            padding-left: 0;
-        }
-        .tree ul.tree-children {
-            display: flex;
-            justify-content: center;
-        }
-        .tree li {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            padding: 30px 10px 0 10px;
-            list-style: none;
-        }
-        .tree li::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            border-left: 2px solid #6c63ff;
-            width: 0;
-            height: 30px;
-        }
-        .tree li::after {
-            content: '';
-            position: absolute;
-            top: 30px;
-            left: 0;
-            right: 0;
-            border-top: 2px solid #6c63ff;
-        }
-        .tree li:first-child::after {
-            left: 50%;
-        }
-        .tree li:last-child::after {
-            right: 50%;
-        }
-        .tree li:only-child::after {
-            display: none;
-        }
-        .tree li:only-child::before {
-            display: none;
-        }
-        .tree > li::before,
-        .tree > li::after {
-            display: none;
-        }
-        .tree-node {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .person-card {
-            background: white;
-            border: 2px solid #6c63ff;
-            border-radius: 12px;
-            padding: 15px 25px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.15);
-            position: relative;
-            z-index: 2;
-            min-width: 160px;
-            transition: transform 0.2s;
-        }
-        .person-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.25);
-        }
-        .person-name {
-            font-size: 16px;
-            font-weight: 700;
-            color: #333;
-        }
-        .person-detail {
-            font-size: 12px;
-            color: #777;
-            margin-top: 4px;
-        }
-        .person-detail.dece {
-            color: #e74c3c;
-        }
-        .person-partner {
-            font-size: 13px;
-            color: #6c63ff;
-            margin-top: 6px;
-            font-weight: 600;
-        }
-        .tree-empty {
-            text-align: center;
-            padding: 80px 20px;
-            color: #888;
-        }
-        .tree-empty i {
-            font-size: 48px;
-            color: #ddd;
-            margin-bottom: 15px;
-        }
-        .card2 {
-            margin: 0 0 30px 0;
-        }
-    </style>
+    <title>Arbre genealogique - ArbreG.</title>
 </head>
 <body>
+
     <div class="navbar">
-        <div class="container flex">
+        <div class="container">
             <h1 class="logo">ArbreG.</h1>
             <nav>
                 <ul>
-                    <li><a href="../home/index.php">Acceuil</a></li>
+                    <li><a href="../home/index.php">Accueil</a></li>
                     <li><a href="../person/registre.php">Registre</a></li>
-                    <li><a href="../docs/docs.php">Membre</a></li>
-                    <li><a href="../login/index.php">Se deconnecter</a></li>
+                    <li><a href="docs.php">Membres</a></li>
+                    <li><a href="arbre.php" class="active">Arbre</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 
-    <div class="card2">
-        <h1 style="text-align:center;margin:30px 0 10px;color:#333;">Arbre Généalogique</h1>
-        <p style="text-align:center;color:#888;margin-bottom:30px;">
-            <i class="fas fa-sitemap"></i> Visualisation des liens familiaux
-        </p>
-
-        <?php if (empty($allMembers)): ?>
-            <div class="tree-empty">
-                <i class="fas fa-tree"></i>
-                <p>Aucun membre enregistr\u00e9. <a href="../person/registre.php">Ajoutez des membres</a> pour commencer l'arbre.</p>
-            </div>
-        <?php elseif (empty($roots)): ?>
-            <div class="tree-empty">
-                <i class="fas fa-exclamation-triangle"></i>
-                <p>Aucune racine trouv\u00e9e. Tous les membres ont des parents r\u00e9f\u00e9renc\u00e9s.</p>
-            </div>
-        <?php else: ?>
-            <div class="tree-container">
-                <div class="tree">
-                    <ul>
-                        <?php foreach ($roots as $root): ?>
-                            <?php renderTree($root, $childrenByParent); ?>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            </div>
-        <?php endif; ?>
+    <div class="page-header">
+        <div class="container">
+            <h1>Arbre genealogique</h1>
+            <p>Visualisation des liens familiaux</p>
+        </div>
     </div>
 
-    <div class="cards1"></div>
-    <footer class="footer bg-dark py-5">
-        <div class="footdocs">
-            <div class="container grid grid-3">
+    <section class="section-sm">
+        <div class="container">
+            <div class="card2" style="padding:32px;">
+                <?php if (empty($allMembers)): ?>
+                    <div style="text-align:center; padding:60px 20px; color:var(--gray-500);">
+                        <i class="fas fa-tree" style="font-size:48px; margin-bottom:16px; display:block; color:var(--gray-300);"></i>
+                        <p style="font-size:18px; font-weight:600; color:var(--gray-700);">Aucun membre enregistre</p>
+                        <p style="margin-top:8px;">Ajoutez des membres pour voir l'arbre genealogique.</p>
+                        <a href="../person/registre.php" class="btn btn-primary" style="margin-top:20px; display:inline-flex;">+ Ajouter un membre</a>
+                    </div>
+                <?php elseif (empty($roots)): ?>
+                    <div style="text-align:center; padding:60px 20px; color:var(--gray-500);">
+                        <i class="fas fa-exclamation-triangle" style="font-size:48px; margin-bottom:16px; display:block; color:var(--warning);"></i>
+                        <p style="font-size:18px; font-weight:600; color:var(--gray-700);">Aucune racine trouvee</p>
+                        <p style="margin-top:8px;">Tous les membres ont des parents references.</p>
+                    </div>
+                <?php else: ?>
+                    <div class="tree-container">
+                        <div class="tree">
+                            <ul>
+                                <?php foreach ($roots as $root): ?>
+                                    <?php renderTree($root, $childrenByParent); ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="text-align:center; margin-top:32px; color:var(--gray-500); font-size:13px;">
+                        <i class="fas fa-info-circle"></i> Survolez les cartes pour plus de details
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-3" style="align-items:start;">
                 <div>
-                    <h1>ArbreG.</h1>
-                    <p>Copyright &copy; 2022</p>
+                    <h3>ArbreG.</h3>
+                    <p>Application de gestion d'arbre genealogique.</p>
                 </div>
                 <nav>
+                    <p style="font-weight:600; margin-bottom:12px; color:#fff;">Navigation</p>
                     <ul>
-                        <li><a href="../home/index.php">Acceuil</a></li>
+                        <li><a href="../home/index.php">Accueil</a></li>
                         <li><a href="../person/registre.php">Registre</a></li>
-                        <li><a href="../docs/docs.php">Membre</a></li>
+                        <li><a href="docs.php">Membres</a></li>
+                        <li><a href="arbre.php">Arbre</a></li>
                     </ul>
                 </nav>
                 <div class="social">
-                    <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-                    <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-                    <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                    <p style="font-weight:600; margin-bottom:12px; color:#fff;">Suivez-nous</p>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
                 </div>
+            </div>
+            <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:32px; padding-top:24px; text-align:center;">
+                <p>&copy; 2024 ArbreG.</p>
             </div>
         </div>
     </footer>
+
 </body>
 </html>
