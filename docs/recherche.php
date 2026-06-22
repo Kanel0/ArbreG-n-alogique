@@ -1,6 +1,6 @@
 <?php
 session_start();
-$objetPdo = new PDO("mysql:host=localhost;dbname=sgbd",'root','');
+require_once __DIR__ . '/../config/database.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

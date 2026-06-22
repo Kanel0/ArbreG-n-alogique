@@ -1,5 +1,6 @@
 <?php
-$objetPdo = new PDO("mysql:host=localhost;dbname=sgbd",'root','');
+require_once __DIR__ . '/../config/database.php';
+$objetPdo = getPDO();
 
 $stmt = $objetPdo->query("SELECT * FROM individu ORDER BY nom ASC");
 $allMembers = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -1,6 +1,7 @@
 <?php
 
-$objetPdo = new PDO("mysql:host=localhost;dbname=sgbd",'root','');
+require_once __DIR__ . '/../config/database.php';
+$objetPdo = getPDO();
 
 $pdoStat = $objetPdo->prepare("UPDATE individu SET nom=:nom,date_de_naissance=:naissance,age=:age,genre=:genre WHERE id_individu = :numParticipant LIMIT 1;");
 

@@ -1,15 +1,6 @@
 <?php
-$host="localhost";
-$user="root";
-$password="";
-$db="sgbd";
-
-try{
-    $relation = new PDO("mysql:host=" . $host . ";dbname=" . $db, $user, $password);
-    $relation -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}catch(PDOException $e){
-    echo "Une erreur s'est produite : " . $e -> getMessage();
-}
+require_once __DIR__ . '/../config/database.php';
+$relation = getPDO();
 // $age = $annee_naissance - 
 // $naissance1 = strstr($date_de_naissance, '/', '-');
 // $naissance = date('Y-m-d', strtotime($naissance1));

@@ -1,6 +1,7 @@
 <?php
 
-$objetPdo = new PDO("mysql:host=localhost;dbname=sgbd",'root','');
+require_once __DIR__ . '/../config/database.php';
+$objetPdo = getPDO();
 
 $pdoStat = $objetPdo->prepare("SELECT * FROM individu WHERE age<18 ORDER BY nom ASC;");
 

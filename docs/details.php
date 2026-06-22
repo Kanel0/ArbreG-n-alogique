@@ -1,12 +1,7 @@
 <?php
 
-    try{
-        $objetPdo = new PDO("mysql:host=localhost;dbname=sgbd",'root','');
-        
-    }
-    catch(PDOException $e){
-        echo "Connexion à la base impossible...";
-    }
+    require_once __DIR__ . '/../config/database.php';
+    $objetPdo = getPDO();
     
      $pdoStat = $objetPdo->prepare("SELECT * FROM individu WHERE id_individu = :num;");
     
