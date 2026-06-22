@@ -35,6 +35,7 @@ $participants = $pdoStat->fetchAll();
                     <li><a href="../home/index.php">Acceuil</a></li>
                     <li><a href="../person/registre.php">Registre</a></li>
                     <li><a href="../docs/docs.php">Membre</a></li>
+                    <li><a href="../docs/arbre.php">Arbre</a></li>
                     <li><a href="../login/index.php">Se deconnecter</a></li>
                 </ul>
             </nav>
@@ -159,6 +160,7 @@ $participants = $pdoStat->fetchAll();
                     <li><a href="parent.php">.Parent</a></li>
                     <li><a href="mariage.php">.Mariage ou Couple</a></li>
                     <li><a href="dece.php">.Date de décés</a></li>
+                    <li><a href="arbre.php" style="color:#6c63ff;">.Arbre Généalogique</a></li>
                 </ul>
                 </div>
   <style>

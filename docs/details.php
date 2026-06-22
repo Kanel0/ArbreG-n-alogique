@@ -38,6 +38,7 @@
                     <li><a href="../home/index.php">Acceuil</a></li>
                     <li><a href="../person/registre.php">Registre</a></li>
                     <li><a href="../docs/docs.php">Membre</a></li>
+                    <li><a href="../docs/arbre.php">Arbre</a></li>
                     <li><a href="../login/index.php">Se deconnecter</a></li>
                 </ul>
             </nav>

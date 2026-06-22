@@ -19,6 +19,7 @@
                     <li><a href="index.php">Acceuil</a></li>
                     <li><a href="../person/registre.php">Registre</a></li>
                     <li><a href="../docs/docs.php">Membre</a></li>
+                    <li><a href="../docs/arbre.php">Arbre</a></li>
                     <li><a href="../login/index.php">Se deconnecter</a></li>
 
                 </ul>
@@ -79,6 +80,11 @@ margin-left:300px;
         <h2>Marie ou la Femme</h2>
         <p>Marie ou la Femme de la Génération suivante</p>
         <div class="services__btn"><a href="../docs/docs.php"><button> Voir</button></a></div>
+      </div>
+      <div class="services__card" style="border: 2px solid #6c63ff;">
+        <h2>Arbre Généalogique</h2>
+        <p>Visualisez l'arbre complet de votre famille</p>
+        <div class="services__btn"><a href="../docs/arbre.php"><button style="background:#6c63ff;">Voir l'arbre</button></a></div>
       </div>
     </div>
   </div>
