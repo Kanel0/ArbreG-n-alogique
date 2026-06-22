@@ -4,10 +4,10 @@
  * Modifiez ces paramètres selon votre hébergement
  */
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'sgbd');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', 'sql103.infinityfree.com');
+define('DB_NAME', 'if0_42244168_arbreg');
+define('DB_USER', 'if0_42244168');
+define('DB_PASS', 'arbre2026');
 
 function getPDO() {
     try {

@@ -1,8 +1,6 @@
 -- Base de données pour l'application ArbreGénéalogique
--- Hébergement gratuit compatible (MySQL / MariaDB)
-
-CREATE DATABASE IF NOT EXISTS `sgbd` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `sgbd`;
+-- Importez ce fichier dans phpMyAdmin après avoir créé la base vide
+-- via le panneau de votre hébergeur
 
 -- Table administrateurs (connexion)
 CREATE TABLE IF NOT EXISTS `admin` (
