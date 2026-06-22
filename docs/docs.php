@@ -43,134 +43,61 @@ $participants = $pdoStat->fetchAll();
         </div>
     </div>
     <div class="card2">
-    <style>
-    input[type="submit"],
-    input[type="search"]{
-        margin-top:50px;
-        
-    }
-    input[type="search"]{
-        margin-left:50px;
-        width:300px;
-        height:30px;
-    }
-    </style>
-    <form action="recherche.php" method="post">
-   <input type="search" name="recherche" placeholder=" Nom Complet">
-   <a href="#">
-   <input type="submit" value="recherche" name="cherch">
-   </a>
-   </form>
-   
-                <font color="red" align="center"></font>
-                <div class="col-md-12">
-                    <!--    Bordered Table  -->
-                    <div class="panel panel-default">
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive table-bordered">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>id</th>
-                                            <th>Nom Complet</th>
-                                           <th>Genre</th>
-										   <th>Date de Naissance</th>
-                                           <th>Age</th>
-                                            <!-- <th>Seat no</th> -->
-        
-                                             <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+        <div style="display:flex; align-items:center; gap:15px; flex-wrap:wrap; margin-bottom:20px;">
+            <form action="recherche.php" method="post" style="display:flex; gap:10px; align-items:center;">
+                <input type="search" name="recherche" placeholder="Nom Complet">
+                <input type="submit" value="Rechercher" name="cherch">
+            </form>
+        </div>
 
-
-                                    <?php foreach ($participants as $participant): ?>
-                                        <tr>
-                                            <!-- <td>#</td>
-                                            <td>Nom Complet</td>
-                                            <td>Genre</td>
-											<td>Date de Naissance</td>
-                                            <td>Age</td> -->
-                                            
-                    <td><?= $participant["id_individu"] ?></td>
-                    <td><?= $participant["nom"] ?></td>
-                    <td><?= $participant["genre"] ?></td>
-                    <td><?= $participant["date_de_naissance"] ?></td>
-                    <td><?= $participant["age"] ?></td>
-                                          
-                                            <td>
-                                            <a href="modifier.php?numParticipant=<?= $participant['id_individu']?>" onClick="return confirm('voulez-vous vraiment le Modifier?')">
-                                            <button class="btn btn-danger">Modifier</button>
-</a>
-  <a href="Suppression.php?numParticipant=<?= $participant['id_individu']?>" onClick="return confirm('voulez-vous vraiment le supprimer?')">
-                                            <button class="btn btn-danger">Supprimer</button>
-</a>
-
-<a href="details.php?numParticipant=<?= $participant['id_individu']?>" >
-                                            <button class="btn btn-danger">Details</button>
-</a>
-                                            </td>
-                                        </tr>
-
-                                        <?php endforeach; ?>
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                     <!--  End  Bordered Table  -->
-                </div>
-            </div>
-
-
-
-
-
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom Complet</th>
+                        <th>Genre</th>
+                        <th>Date de Naissance</th>
+                        <th>Age</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($participants as $participant): ?>
+                    <tr>
+                        <td><?= $participant["id_individu"] ?></td>
+                        <td><strong><?= $participant["nom"] ?></strong></td>
+                        <td><?= $participant["genre"] ?></td>
+                        <td><?= $participant["date_de_naissance"] ?></td>
+                        <td><?= $participant["age"] ?></td>
+                        <td style="white-space:nowrap;">
+                            <a href="modifier.php?numParticipant=<?= $participant['id_individu']?>" onClick="return confirm('Voulez-vous vraiment le modifier?')">
+                                <button class="btn btn-danger">Modifier</button>
+                            </a>
+                            <a href="Suppression.php?numParticipant=<?= $participant['id_individu']?>" onClick="return confirm('Voulez-vous vraiment le supprimer?')">
+                                <button class="btn btn-danger">Supprimer</button>
+                            </a>
+                            <a href="details.php?numParticipant=<?= $participant['id_individu']?>">
+                                <button class="btn btn-danger">Details</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         </div>
     </div>
-  
-    <script src="assets/js/bootstrap.js"></script>
 
-                                            
-                                        </tr>
-
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-
-
-
-
-
+    <div class="card2" style="margin-top:10px;">
+        <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+            <a href="enfant.php" style="padding:14px 28px; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; border-radius:10px; font-weight:600; transition:all 0.3s;">+ Enfant</a>
+            <a href="adulte.php" style="padding:14px 28px; background:linear-gradient(135deg,#a6ffcb,#12d8fa); color:#1a1a2e; border-radius:10px; font-weight:600; transition:all 0.3s;">+ Adulte</a>
+            <a href="parent.php" style="padding:14px 28px; background:linear-gradient(135deg,#231557,#ff1361); color:#fff; border-radius:10px; font-weight:600; transition:all 0.3s;">+ Parent</a>
+            <a href="mariage.php" style="padding:14px 28px; background:linear-gradient(135deg,#f093fb,#f5576c); color:#fff; border-radius:10px; font-weight:600; transition:all 0.3s;">+ Mariage</a>
+            <a href="dece.php" style="padding:14px 28px; background:linear-gradient(135deg,#4facfe,#00f2fe); color:#1a1a2e; border-radius:10px; font-weight:600; transition:all 0.3s;">+ Decès</a>
+            <a href="arbre.php" style="padding:14px 28px; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; border-radius:10px; font-weight:600; transition:all 0.3s;">Arbre</a>
         </div>
     </div>
-    <div class="cards1">
-
-</div>
-    <div class="card">
-    <ul class="list">
-                    <li><a href="enfant.php">.Enfant</a></li>
-                    <li><a href="adulte.php">.Adulte</a></li>
-                    <li><a href="parent.php">.Parent</a></li>
-                    <li><a href="mariage.php">.Mariage ou Couple</a></li>
-                    <li><a href="dece.php">.Date de décés</a></li>
-                    <li><a href="arbre.php" style="color:#6c63ff;">.Arbre Généalogique</a></li>
-                </ul>
-                </div>
-  <style>
-.list a{
-      font-size:30px;
-      margin-bottom:200px;
-  }
-  </style>
-    <script src="assets/js/bootstrap.js"></script>
 
     <!-- Footer -->
     <footer class="footer bg-dark py-5">

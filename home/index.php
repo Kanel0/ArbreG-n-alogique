@@ -41,55 +41,45 @@
         </div>
     </section>
 
-    <!-- Stats -->
     <section class="stats">
         <div class="container">
-            <h3 class="stats-heading text-center my-1 ">
-                Bienvenue sur notre page web et vous devez commencer enregistré tous les génération dans votre famille 
+            <h3 class="stats-heading text-center my-1">
+                Bienvenue sur notre page web. Commencez par enregistrer toutes les générations de votre famille
             </h3>
-<style>
-.services__card{
-height:400px;
-width:250px;
-display: flex;
-margin-left:300px;
-}
-</style>
- <!-- Services Section -->
- <div class="card2">
- <div class="services" id="services">
-    <h1>Membre de la  Famille</h1>
-    <div class="services__wrapper">
-    <div class="car">
-      <div class="services__card">
-        <h2>Père</h2>
-        <p>Ajouter l'information sur le Père de la Famille</p>
-        <div class="services__btn"><a href="../docs/docs.php"><button>Voir</button></a></div>
-      </div>
-      <div class="services__card">
-        <h2>Mère</h2>
-        <p>Ajouter l'information sur la Mère de la famille</p>
-        <div class="services__btn"><a href="../docs/docs.php"><button>Voir</button></a></div>
-      </div>
-      <div class="services__card">
-        <h2>Génération Suivante</h2>
-        <p>Ajouter l'information sur des enfants que le Pére et la Mère ont engendré</p>
-        <div class="services__btn"><a href="../docs/docs.php"><button>Voir</button></a></div>
-      </div>
-      <div class="services__card">
-        <h2>Marie ou la Femme</h2>
-        <p>Marie ou la Femme de la Génération suivante</p>
-        <div class="services__btn"><a href="../docs/docs.php"><button> Voir</button></a></div>
-      </div>
-      <div class="services__card" style="border: 2px solid #6c63ff;">
-        <h2>Arbre Généalogique</h2>
-        <p>Visualisez l'arbre complet de votre famille</p>
-        <div class="services__btn"><a href="../docs/arbre.php"><button style="background:#6c63ff;">Voir l'arbre</button></a></div>
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="card2">
+            <h1>Membre de la Famille</h1>
+            <div class="services__wrapper">
+                <div class="services__card">
+                    <h2>Père</h2>
+                    <p>Ajouter l'information sur le Père de la Famille</p>
+                    <div class="services__btn"><a href="../docs/docs.php"><button>Voir</button></a></div>
+                </div>
+                <div class="services__card">
+                    <h2>Mère</h2>
+                    <p>Ajouter l'information sur la Mère de la famille</p>
+                    <div class="services__btn"><a href="../docs/docs.php"><button>Voir</button></a></div>
+                </div>
+                <div class="services__card">
+                    <h2>Génération Suivante</h2>
+                    <p>Ajouter l'information sur les enfants que le Père et la Mère ont engendré</p>
+                    <div class="services__btn"><a href="../docs/docs.php"><button>Voir</button></a></div>
+                </div>
+                <div class="services__card">
+                    <h2>Mariage ou Couple</h2>
+                    <p>Marie ou la Femme de la Génération suivante</p>
+                    <div class="services__btn"><a href="../docs/docs.php"><button>Voir</button></a></div>
+                </div>
+                <div class="services__card">
+                    <h2>Arbre Généalogique</h2>
+                    <p>Visualisez l'arbre complet de votre famille</p>
+                    <div class="services__btn"><a href="../docs/arbre.php"><button>Voir l'arbre</button></a></div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Cli -->
