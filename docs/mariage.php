@@ -160,8 +160,8 @@ $participants = $pdoStat->fetchAll();
   <a href="Suppression.php?numParticipant=<?= $participant['id_individu']?>" onClick="return confirm('voulez-vous vraiment le supprimer?')">
                                             <button class="btn btn-danger">Supprimer</button>
 </a>
-<a href="details.php" >
-                                            <button class="btn btn-danger">Details</button>
+<a href="details.php?numParticipant=<?= $participant['id_individu']?>" >
+                                             <button class="btn btn-danger">Details</button>
 </a>
                                             </td>
                                         </tr>

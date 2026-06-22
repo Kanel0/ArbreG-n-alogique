@@ -163,8 +163,8 @@ $participants = $pdoStat->fetchAll();
   <a href="#" onClick="return confirm('voulez-vous vraiment le supprimer?')">
                                             <button class="btn btn-danger">Supprimer</button>
 </a>
-<a href="details.php" >
-                                            <button class="btn btn-danger">Details</button>
+<a href="#" >
+                                             <button class="btn btn-danger">Details</button>
 </a>
                                             </td>
                                         </tr>

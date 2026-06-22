@@ -46,21 +46,27 @@ try{
 // mysqli_select_db($db);
 
 if(!empty($_POST['email']) && !empty($_POST['motdepass'])){
-    $select = $relation -> prepare("SELECT email FROM admin WHERE email = :emaitso");
+      $select = $relation -> prepare("SELECT email, mot_de_passe FROM admin WHERE email = :emaitso");
     $select -> execute([
       "emaitso" => $_POST["email"]
     ]);
-    $nb_select = $select -> rowCount();
-    if($nb_select == 0){
+    $user = $select -> fetch();
+    if(!$user){
       ?>
       <script>
           alert("Compte inéxistant !");
       </script>
   <?php
     }else{
-      $hash = password_hash($_POST["motdepass"], PASSWORD_BCRYPT);
-      if(password_verify($_POST["motdepass"], $hash)){
+      if(password_verify($_POST["motdepass"], $user['mot_de_passe'])){
         header('location: ../home/index.php');
+        exit();
+      }else{
+        ?>
+        <script>
+            alert("Mot de passe incorrect !");
+        </script>
+    <?php
       }
     }
     

@@ -15,9 +15,9 @@
             <h1 class="logo">ArbreG.</h1>
             <nav>
                 <ul>
-                    <li><a href="../home/index.html">Acceuil</a></li>
-                    <li><a href="../person/registre.html">Registre</a></li>
-                    <li><a href="../docs/docs.html">Membre</a></li>
+                    <li><a href="../home/index.php">Acceuil</a></li>
+                    <li><a href="../person/registre.php">Registre</a></li>
+                    <li><a href="../docs/docs.php">Membre</a></li>
                 </ul>
             </nav>
         </div>
@@ -105,9 +105,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="../home/index.html">Acceuil</a></li>
-                    <li><a href="../person/registre.html">Registre</a></li>
-                    <li><a href="../docs/docs.html">Membre</a></li>
+                    <li><a href="../home/index.php">Acceuil</a></li>
+                    <li><a href="../person/registre.php">Registre</a></li>
+                    <li><a href="../docs/docs.php">Membre</a></li>
                 </ul>
             </nav>
             <div class="social">

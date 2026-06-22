@@ -26,8 +26,7 @@ $nom_enfant=$membres['nom'];
     
     $pere = $objetPdo->quote($nom_pere);
     $mere = $objetPdo->quote($nom_mere);
-    $exe=$objetPdo->query("UPDATE individu SET id_pere=$id_pere,pere=$nom_pere,id_mere=$id_mere,mere=$nom_mere WHERE id_individu=$id_enfant ");
-    $exe->execut();
+    $exe=$objetPdo->query("UPDATE individu SET id_pere=$id_pere,pere=$pere,id_mere=$id_mere,mere=$mere WHERE id_individu=$id_enfant ");
     if($exe){
         echo"réussi";
     }else{

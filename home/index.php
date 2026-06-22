@@ -105,7 +105,7 @@ margin-left:300px;
             <div class="text-center">
                 <h2 class="lg">ArbreG. comme Arbre Généalogique </h2>
                 <p class="lead my-1">Savez-vous que des gens pourrait avoir des orgines différentes mais de la même famille?</p>
-                <a href="../features/features.html" class="btn btn-dark">Savoir Plus</a>
+                <a href="../features/features.php" class="btn btn-dark">Savoir Plus</a>
             </div>
             <img src="../images/logos/Arbre.jpg" alt="">
         </div>

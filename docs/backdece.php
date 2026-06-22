@@ -15,11 +15,11 @@ $date_naissance=$membres['date_de_naissance'];
 $tab_naissance = explode("-", $date_naissance);
     $nb_tab_naissance = count($tab_naissance);
     $annee_naissance = $tab_naissance[0];
- $age= $annee_dece - $annee_naissance
+ $age= $annee_dece - $annee_naissance;
  $datedece = $objetPdo->quote($_POST['date_dece']);
  $agedece = $objetPdo->quote($age);
    
-    $objetPdo->query("UPDATE individu SET dece=$datedece,age=$age WHERE id_individu=$id1  ");
+    $objetPdo->query("UPDATE individu SET dece=$datedece,age=$agedece WHERE id_individu=$id1  ");
    
   
     
