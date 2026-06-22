@@ -23,19 +23,23 @@ $participants = $pdoStat->fetchAll();
     <title>Arbre généalogique</title>
 </head>
 <body>
-    <!-- Navbar -->
     <div class="navbar">
-        <div class="container flex">
+        <div class="container">
             <h1 class="logo">ArbreG.</h1>
             <nav>
                 <ul>
-                    <li><a href="../home/index.php">Acceuil</a></li>
+                    <li><a href="../home/index.php">Accueil</a></li>
                     <li><a href="../person/registre.php">Registre</a></li>
-                    <li><a href="../docs/docs.php">Membre</a></li>
+                    <li><a href="../docs/docs.php">Membres</a></li>
                     <li><a href="../docs/arbre.php">Arbre</a></li>
-                    <li><a href="../login/index.php">Se deconnecter</a></li>
                 </ul>
             </nav>
+        </div>
+    </div>
+    <div class="page-header">
+        <div class="container">
+            <h1>Deces</h1>
+            <p>Enregistrer les dates de deces</p>
         </div>
     </div>
     <style>
